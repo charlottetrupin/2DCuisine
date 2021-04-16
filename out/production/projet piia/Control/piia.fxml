@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.shape.Line?>
+<Pane prefHeight="507.0" prefWidth="814.0" style="-fx-background-color: #deb887;" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+   <children>
+       <TabPane layoutX="14.0" layoutY="58.0" prefHeight="343.0" prefWidth="199.0" style="-fx-background-color: #f5f5dc;">
+        <tabs>
+          <Tab closable="false" text="Dimension">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="238.0" prefWidth="199.0" style="-fx-background-color: #f5f5dc; -fx-border-color: #000000;">
+                     <children>
+                        <Text layoutX="53.0" layoutY="66.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Longueur (en cm)" />
+                        <Text layoutX="59.0" layoutY="132.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Largeur (en cm)" />
+                        <TextField fx:id="larg"  layoutX="25.0" layoutY="136.0"  text="200" />
+                         <TextField fx:id="lon" layoutX="25.0" layoutY="70.0"  text="200" />
+                         <Button fx:id="valide" layoutX="72.0" layoutY="223.0" mnemonicParsing="false" onMouseClicked="#valide" text="valider" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab closable="false" text="Equipements">
+            <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="198.0" style="-fx-background-color: #f5f5dc;" />
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+       <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="BURLYWOOD" height="400.0" layoutX="322.0" layoutY="116.0" stroke="#cf9753" strokeType="INSIDE" width="400.0" />
+       <Line fx:id="lineLong" endX="249.39996337890625" endY="1.52587890625E-5" stroke="BURLYWOOD" layoutX="481.0" layoutY="90.0" startX="-158.5999755859375" startY="-1.52587890625E-5" />
+       <Line fx:id="lineLarg" endX="-69.39996337890625" endY="-318.0" stroke="BURLYWOOD"  layoutX="355.0" layoutY="434.0" startX="-69.39996337890625" startY="-58.79998779296875" />
+       <Text fx:id="textLarg" layoutX="241.0" layoutY="214.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" " x="20.0" y="20.0" />
+       <Text fx:id="textLong" layoutX="494.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text=" "  x="20.0" y="10.0" />
+   </children>
+</Pane>
