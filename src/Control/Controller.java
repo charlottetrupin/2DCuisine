@@ -3,6 +3,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Spinner;
+import javafx.scene.control.Tab;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
@@ -24,6 +25,7 @@ public class Controller {
     @FXML private Text textLarg;
     @FXML private Text textLong;
     @FXML private Button valide;
+    @FXML private Tab equipement;
 
 
     @FXML
@@ -32,5 +34,10 @@ public class Controller {
         dim.echelle(this.rect,this.lineLong,this.lineLarg,this.textLong,this.textLarg);
     }
 
+    @FXML
+    protected void equipementSelect(){
+
+        System.out.println("coucou");
+    }
 
 }

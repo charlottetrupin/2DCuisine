@@ -45,7 +45,7 @@ public class Dimension {
             l1.setEndX(l1.getStartX() + width);
             l2.setStartY(l2.getEndY() + height);
             t1.setX(l1.getStartX()+ width/2);
-            t2.setY((l2.getEndY()+height)/6);
+            t2.setY((l2.getEndY()+height)/7);
         } else {
             double width = (400. / this.longueur) * this.longueur;
             double height = (400. / this.longueur) * this.largeur;
