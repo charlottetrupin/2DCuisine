@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<Pane prefHeight="507.0" prefWidth="814.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller2">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#295676" height="773.0" stroke="#295676" strokeType="INSIDE" width="237.0" />
+      <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="260.0" layoutX="332.0" layoutY="126.0" stroke="BLACK" strokeType="INSIDE" width="409.0" />
+      <Line fx:id="lineLong" endX="249.39996337890625" endY="1.52587890625E-5" layoutX="491.0" layoutY="100.0" startX="-158.5999755859375" startY="-1.52587890625E-5" />
+      <Line fx:id="lineLarg" endX="-69.39996337890625" endY="-318.0" layoutX="374.0" layoutY="444.0" startX="-69.39996337890625" startY="-58.79998779296875" />
+      <Text fx:id="textLong" layoutX="486.0" layoutY="78.0" strokeType="OUTSIDE" strokeWidth="0.0" text="longueur" x="20.0" y="10.0" />
+      <Text fx:id="textLarg" layoutX="246.0" layoutY="240.0" strokeType="OUTSIDE" strokeWidth="0.0" text="largeur" wrappingWidth="37.48828125" x="20.0" y="20.0" />
+      <Text layoutX="36.0" layoutY="60.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Choix des équipements" textAlignment="CENTER" wrappingWidth="165.7999877929688">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Accordion layoutX="17.0" layoutY="122.0">
+         <panes>
+            <TitledPane animated="false" text="Meuble">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Gazinière">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" layoutX="10.0" layoutY="10.0" text="Evier">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+            <TitledPane animated="false" text="Réfrigérateur">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </TitledPane>
+         </panes>
+      </Accordion>
+   </children>
+</Pane>

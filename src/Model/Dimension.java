@@ -9,17 +9,14 @@ public class Dimension {
     private int longueur;
     private int largeur;
 
+
     public Dimension(int lon, int larg) {
         this.longueur = lon;
         this.largeur = larg;
     }
 
-    public float getLargeur() {
+    public int getLargeur() {
         return largeur;
-    }
-
-    public float getLongueur() {
-        return longueur;
     }
 
     public void setLargeur(int largeur) {
@@ -37,7 +34,7 @@ public class Dimension {
         t2.setText(String.valueOf(this.largeur));
         l1.setStroke(Paint.valueOf("BLACK"));
         l2.setStroke(Paint.valueOf("BLACK"));
-        if (this.longueur > this.largeur) {
+        if (this.longueur >= this.largeur) {
             double width = (600. / this.longueur) * this.longueur;
             double height = (600. / this.longueur) * this.largeur;
             rect.setWidth(width);
@@ -45,10 +42,10 @@ public class Dimension {
             l1.setEndX(l1.getStartX() + width);
             l2.setStartY(l2.getEndY() + height);
             t1.setX(l1.getStartX()+ width/2);
-            t2.setY((l2.getEndY()+height)/7);
+            t2.setY((l2.getEndY()+height)/6);
         } else {
-            double width = (400. / this.longueur) * this.longueur;
-            double height = (400. / this.longueur) * this.largeur;
+            double width = (800. / this.largeur) * this.longueur;
+            double height = (600. / this.largeur) * this.largeur;
             rect.setWidth(width);
             rect.setHeight(height);
             l1.setEndX(l1.getStartX() + width);
