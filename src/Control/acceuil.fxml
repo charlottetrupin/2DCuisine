@@ -18,7 +18,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#295676" height="514.0" layoutX="-2.0" layoutY="-1.0" stroke="#163048" strokeType="INSIDE" width="165.0" />
       <ImageView fitHeight="303.0" fitWidth="696.0" layoutX="119.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@kitchen.jpg" />
+            <Image url="@../images/kitchen.jpg" />
          </image>
       </ImageView>
       <Text layoutX="175.0" layoutY="396.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vous voulez visualiser votre cuisine en 2D, pouvoir la modéliser selon votre espace, y ajouter les meubles que vous souhaitez ? Vous pouvez le faire rapidement avec notre site !" textAlignment="JUSTIFY" wrappingWidth="385.18301582336426">

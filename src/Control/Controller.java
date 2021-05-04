@@ -17,6 +17,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 
 public class Controller {
     @FXML private TextField larg;
@@ -29,11 +31,14 @@ public class Controller {
     @FXML private Text erreur;
     @FXML private Button equip;
     private int longueur;
-    private int largeur;
+    private int largeur = 0;
     private Button b = new Button();
 
+
+
+
     @FXML
-    protected void valide(MouseEvent e){
+    protected void valide(MouseEvent e) throws IOException {
         erreur.setFill(Paint.valueOf("#295676"));
         String exp = "[1-9][0-9]+";
         if(larg.getText().matches(exp) && lon.getText().matches(exp)) {
@@ -69,15 +74,26 @@ public class Controller {
         newWindow.setY(primaryStage.getY() + 100);
         newWindow.show();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("equipement.fxml"));
-        Pane pane = (Pane) loader.load();
-        Controller2 c = loader.<Controller2>getController();
-        Scene myScene2 = new Scene(pane, pane.getPrefWidth()*1.5, pane.getPrefHeight()*1.5);
+        Pane pane = loader.load();
+
+        Controller2 c = loader.getController();
         Dimension dim = new Dimension(this.longueur, this.largeur);
+        dim.echelle(c.getRect(),c.getLineLong(),c.getLineLarg(),c.getTextLong(),c.getTextLarg());
+        pane.getChildren().set(1,c.getRect());
+        pane.getChildren().set(2,c.getLineLong());
+        pane.getChildren().set(3,c.getLineLarg());
+        pane.getChildren().set(4,c.getTextLong());
+        pane.getChildren().set(5,c.getTextLarg());
+        c.setPane(pane);
+        c.setLargeur(this.largeur);
+        c.setLongueur(this.longueur);
+        Scene myScene2 = new Scene(pane, pane.getPrefWidth()*1.5, pane.getPrefHeight()*1.5);
+
         b.setOnAction(new EventHandler<ActionEvent>(){
             @Override
             public void handle(ActionEvent actionEvent) {
                 newWindow.close();
-                dim.echelle(c.getRect(),c.getLineLong(),c.getLineLarg(),c.getTextLong(),c.getTextLarg());
+
                 primaryStage.setScene(myScene2);
                 primaryStage.setX(primaryStage.getX());
                 primaryStage.setY(primaryStage.getY());
@@ -88,11 +104,10 @@ public class Controller {
     }
 
 
-
-
     public int getLargeur() {
         return this.largeur;
     }
+
     public int getLongueur(){
         return this.longueur;
     }
