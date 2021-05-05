@@ -7,38 +7,69 @@ import javafx.scene.shape.Rectangle;
 import java.util.ArrayList;
 
 public class Meuble {
-    private int longueur;
-    private int largeur;
+    private double longueur;
+    private double largeur;
+    private double x;
+    private double y;
+    private ImageView i;
 
-    public Meuble(int lon, int larg) {
-        this.longueur = lon;
-        this.largeur = larg;
+    public Meuble(ImageView i ) {
+        this.x = i.getX();
+        this.y = i.getY();
+        this.i = i;
+        this.longueur = i.getFitWidth();
+        this.largeur = i.getFitHeight();
+
     }
 
-    public void ajoutMeuble(ImageView i, ImageView i1, Rectangle rect){
+    public void ajoutMeuble(ImageView i, ImageView i1, Rectangle rect, int longCuisine, int largCuisine){
         i.setLayoutY(rect.getLayoutY() + 1);
         i.setLayoutX(rect.getLayoutX() + 1);
         i.setX(rect.getX());
         i.setY(rect.getY());
         i.setImage(i1.getImage());
-        if (this.longueur >= this.largeur) {
-            double width = ((600. / this.longueur) * i1.getFitWidth());
-            double height = ((600. / this.longueur)* i1.getFitHeight());
+        if (longCuisine >= largCuisine) {
+            this.longueur = ((600. / longCuisine) * i1.getFitWidth());
+            this.largeur = ((600. / longCuisine)* i1.getFitHeight());
             i.setPreserveRatio(true);
-            i.setFitHeight(height);
-            i.setFitWidth(width);
+            i.setFitHeight(this.largeur);
+            i.setFitWidth(this.longueur);
         }
         else {
-            double width = (800. / this.largeur) * i1.getFitWidth();
-            double height = (600. / this.largeur) * i1.getFitHeight();
+            this.largeur = ((800. / largCuisine) * i1.getFitWidth());
+            this.longueur = ((600. / largCuisine) * i1.getFitHeight());
             i.setPreserveRatio(true);
-            i.setFitHeight(height);
-            i.setFitWidth(width);
+            i.setFitHeight(this.largeur);
+            i.setFitWidth(this.longueur);
         }
 
     }
 
+    public ImageView getI() {
+        return i;
+    }
 
+    public double getX() {
+        return x;
+    }
 
+    public void setX(double x) {
+        this.x = x;
+    }
 
+    public void setY(double y) {
+        this.y = y;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public double getLargeur() {
+        return largeur;
+    }
+
+    public double getLongueur() {
+        return longueur;
+    }
 }

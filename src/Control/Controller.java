@@ -31,7 +31,7 @@ public class Controller {
     @FXML private Text erreur;
     @FXML private Button equip;
     private int longueur;
-    private int largeur = 0;
+    private int largeur;
     private Button b = new Button();
 
 

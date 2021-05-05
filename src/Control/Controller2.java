@@ -35,58 +35,113 @@ public class Controller2 {
     @FXML
     protected void ajout(MouseEvent e) throws Exception {
         ImageView i = new ImageView();
-        Meuble meuble = new Meuble(this.longueur, this.largeur);
+        Meuble meuble = new Meuble(i);
         if (e.getSource().equals(button0) ){
-            meuble.ajoutMeuble(i, image, rect);
+            meuble.ajoutMeuble(i, image, rect, this.longueur, this.largeur);
             pane.getChildren().add(i);
         }
         else if (e.getSource().equals(button1))
         {
-            meuble.ajoutMeuble(i, image1, rect);
+            meuble.ajoutMeuble(i, image1, rect, this.longueur, this.largeur);
             pane.getChildren().add(i);
         }
         else if (e.getSource().equals(button2)){
-            meuble.ajoutMeuble(i, image2, rect);
+            meuble.ajoutMeuble(i, image2, rect, this.longueur, this.largeur);
             pane.getChildren().add(i);
         }
         else if (e.getSource().equals(button3)){
-            meuble.ajoutMeuble(i, image3, rect);
+            meuble.ajoutMeuble(i, image3, rect, this.longueur, this.largeur);
             pane.getChildren().add(i);
         }
         else if(e.getSource().equals(button4)){
-            meuble.ajoutMeuble(i, image4, rect);
+            meuble.ajoutMeuble(i, image4, rect, this.longueur, this.largeur);
             pane.getChildren().add(i);
         }
-        i.setOnMouseClicked(new EventHandler<MouseEvent>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                //if()
-                System.out.println(i.getY());
-                System.out.println(i.getX());
-                //i.setX();
-                //  i.setRotate(90);
-                System.out.println(i.getY());
-                System.out.println(i.getX());
+
+        new Dragger(i,rect,meuble, equipements) ;
+
+        i.setOnMouseClicked(mouseEvent -> {
+            if (mouseEvent.getClickCount() == 2) {
+                i.setRotate(i.getRotate() + 90);
 
             }
         });
-        i.setOnMouseDragged(new EventHandler<>() {
-            @Override
-            public void handle(MouseEvent mouseEvent) {
-                if(mouseEvent.getX() > 0 && mouseEvent.getY() > 0 && rect.getWidth()-i.getFitWidth() > mouseEvent.getX()
-                        && rect.getHeight()-i.getFitHeight() > mouseEvent.getY()) {
-                    i.setX(mouseEvent.getX());
-                    i.setY(mouseEvent.getY());
-                    //equipement.seChevauche(mouseEvent.getX(), mouseEvent.getY(), i.getFitWidth(), i.getFitHeight());
-                }
-            }
-        });
+
         equipements.addMeubles(meuble);
     }
 
 
+    private static class Dragger {
+        private double x ;
+        private double y ;
+        private Meuble meuble;
+        private Equipements eq;
 
+        private Rectangle rect;
+        Dragger(ImageView imageView, Rectangle rec, Meuble m, Equipements eq) {
+            imageView.setOnMousePressed(e -> {
+                x = e.getSceneX();
+                y = e.getSceneY();
+                rect = rec;
+                meuble = m;
+                this.eq = eq;
+            });
+            imageView.setOnMouseDragged(e -> {
+                double deltaX = e.getSceneX() - x;
+                double deltaY = e.getSceneY() - y;
+                if(imageView.getX()+deltaX > 0 && imageView.getY()+deltaY > 0
+                        && rect.getWidth()-imageView.getFitWidth() > imageView.getX()+deltaX
+                        && rect.getHeight()-imageView.getFitHeight() > imageView.getY()+deltaY){
 
+                    if(!eq.seChevauche(imageView, deltaX, deltaY)) {
+                        imageView.setX(imageView.getX() + deltaX);
+                        imageView.setY(imageView.getY() + deltaY);
+                        System.out.println(eq.seChevauche(imageView, deltaX, deltaY));
+                        meuble.setX(imageView.getX() + deltaX);
+                        meuble.setY(imageView.getY() + deltaY);
+                        x = e.getSceneX();
+                        y = e.getSceneY();
+                    }else {
+                        imageView.setX(imageView.getX() + deltaX + 2);
+                        imageView.setY(imageView.getY() + deltaY + 2);
+                        System.out.println(eq.seChevauche(imageView, deltaX, deltaY));
+                        meuble.setX(imageView.getX() + deltaX + 2);
+                        meuble.setY(imageView.getY() + deltaY + 2);
+                        x = e.getSceneX();
+                        y = e.getSceneY();
+                    }
+
+                }else if(imageView.getRotate()%90 == 0 && !(imageView.getRotate()%360 == 0)  ){
+                    System.out.println(((imageView.getX()+e.getX()) /2) +imageView.getFitHeight() ) ;
+                    System.out.println(rect.getWidth());
+                    imageView.setX(imageView.getX() + deltaX);
+                    imageView.setY(imageView.getY() + deltaY);
+                    meuble.setX((int) imageView.getX() );
+                    meuble.setY((int) imageView.getY() ) ;
+                    x = e.getSceneX();
+                    y = e.getSceneY();
+                }
+                else if(imageView.getRotate()%180 == 0 && !(imageView.getRotate()%360 == 0)){
+                    imageView.setX(imageView.getX() + deltaX);
+                    imageView.setY(imageView.getY() + deltaY);
+                    meuble.setX((int) imageView.getX());
+                    meuble.setY((int) imageView.getY());
+                    x = e.getSceneX();
+                    y = e.getSceneY();
+                }
+                else if(imageView.getRotate()%270 == 0  && !(imageView.getRotate()%360 == 0)){
+                    imageView.setX(imageView.getX() + deltaX);
+                    imageView.setY(imageView.getY() + deltaY);
+                    meuble.setX((int) imageView.getX());
+                    meuble.setY((int) imageView.getY());
+                    x = e.getSceneX();
+                    y = e.getSceneY();
+                }
+
+            });
+        }
+
+    }
 
 
     public Line getLineLarg() {

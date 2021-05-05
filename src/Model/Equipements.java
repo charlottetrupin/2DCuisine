@@ -1,13 +1,14 @@
 package Model;
 
-import javafx.scene.image.Image;
+
+import javafx.scene.image.ImageView;
 
 import java.util.ArrayList;
 
 public class Equipements {
-        private ArrayList<Meuble> meubles;
+    private ArrayList<Meuble> meubles;
 
-        public Equipements(){
+    public Equipements(){
             meubles = new ArrayList<Meuble>();
         }
 
@@ -15,20 +16,18 @@ public class Equipements {
         this.meubles.add(m);
     }
 
+    public boolean seChevauche(ImageView i, double dX, double dY) {
+        for (Meuble m : this.meubles) {
+            if(!m.getI().equals(i)){ // ici on verifie qu'on ne compare pas avec l'objet lui meme
+                if(m.getI().intersects(i.getX() + dX, i.getY() + dY, i.getFitWidth(), i.getFitHeight())){
+                    return true;
+                }
 
-        /* public void seChevauche(double x, double y, double fitWidth, double fitHeight) {
+            }
 
-        for (Image image : images) {
-            //if(image.getX() == x && image.getY() == y){// && image.getY() <y+fitHeight) || (image.getX() + image.getFitWidth() > x && image.getY()+image.getFitHeight() > y) ){
-            //  return true;
-            //}
-            System.out.println("count" + images.size());
-            //   System.out.println("ici:"+ image.getX());
-            // System.out.println("ici1:" +image.getY());
-            //System.out.println("ici2" + x);
-            //System.out.println("ici3:" + y);
         }
-        //return false;
-    }*/
+
+        return false;
+    }
 
 }
