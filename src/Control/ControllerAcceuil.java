@@ -24,7 +24,7 @@ public class ControllerAcceuil {
         Stage primaryStage = (Stage) acceuil.getScene().getWindow();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/dimension.fxml"));
         Pane myPane = loader.load();
-        Controller c = loader.getController();
+        ControllerDimension c = loader.getController();
         c.setLongueur(200);
         c.setLarg(200);
         Scene myScene = new Scene(myPane, myPane.getPrefWidth()*1.5,myPane.getPrefHeight()*1.5);

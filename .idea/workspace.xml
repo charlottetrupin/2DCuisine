@@ -2,16 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cca4c63c-42b7-41e0-bd7f-b1f1a0c73c3a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/Controller.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet piia/Control/Controller.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/piia.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet piia/Control/piia.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/Controller$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/Controller2$Dragger.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/Controller2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/ControllerAcceuil.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet piia/Control/ControllerAcceuil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/acceuil.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/dimension.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/equipement.fxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Control/piia.fxml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet piia/Model/Dimension.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet piia/Model/Dimension.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Model/Equipement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Model/Equipements.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet piia/Model/Equipements.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/projet piia/Model/Meuble.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet piia/Model/Meuble.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/projet piia/Vue/Vue.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/projet piia/Vue/Vue.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projet piia.iml" beforeDir="false" afterPath="$PROJECT_DIR$/projet piia.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Control/Controller2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/Controller2.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Equipements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Equipements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Model/Meuble.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Model/Meuble.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ControllerDimension.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/Controller2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ControllerEquipement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Control/ControllerAcceuil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Control/ControllerAcceuil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Fxml/dimension.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fxml/dimension.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Fxml/equipement.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/Fxml/equipement.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,6 +46,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="project.structure.last.edited" value="Global Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -80,5 +92,17 @@
       <updated>1617609797320</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

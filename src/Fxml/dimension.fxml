@@ -8,12 +8,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane prefHeight="507.0" prefWidth="814.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.Controller">
+<Pane prefHeight="507.0" prefWidth="814.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/10.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Control.ControllerDimension">
    <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#295676" height="770.0" layoutX="-5.0" layoutY="-5.0" stroke="#295676" strokeType="INSIDE" width="219.0" />
     <Rectangle fx:id="rect" arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="260.0" layoutX="322.0" layoutY="116.0" stroke="BLACK" strokeType="INSIDE" width="409.0" />
     <Line fx:id="lineLong" endX="249.39996337890625" endY="1.52587890625E-5" layoutX="481.0" layoutY="90.0" startX="-158.5999755859375" startY="-1.52587890625E-5" />
     <Line fx:id="lineLarg" endX="-69.39996337890625" endY="-318.0" layoutX="364.0" layoutY="434.0" startX="-69.39996337890625" startY="-58.79998779296875" />
-    <Text fx:id="textLarg" layoutX="236.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="largeur" wrappingWidth="37.48828125" x="20.0" y="20.0" />
+    <Text fx:id="textLarg" layoutX="228.0" layoutY="230.0" strokeType="OUTSIDE" strokeWidth="0.0" text="largeur" wrappingWidth="40.0" x="20.0" y="20.0" />
     <Text fx:id="textLong" layoutX="476.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="longueur" x="20.0" y="10.0" />
 
     <TextField fx:id="lon" layoutX="38.0" layoutY="116.0" text="200" />
