@@ -1,10 +1,12 @@
 package Model;
 
-import javafx.scene.paint.Paint;
 import javafx.scene.shape.Line;
 import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Text;
 
+/**
+ * Class pour controler les dimensions de la cuisine
+ */
 public class Dimension {
     private int longueur;
     private int largeur;
@@ -15,25 +17,19 @@ public class Dimension {
         this.largeur = larg;
     }
 
-    public int getLargeur() {
-        return largeur;
-    }
 
-    public void setLargeur(int largeur) {
-        this.largeur = largeur;
-    }
-
-    public void setLongueur(int longueur) {
-        this.longueur = longueur;
-    }
-
+    /**
+     * Fonction qui permet de faire l'echelle du rectangle en fonction des dimensions donnees
+     * On set aussi les valeurs des differents elements permettant a l'utilisateur de mieux comprendre
+     * @param rect le rectangle qui represente notre cuisine
+     * @param l1 correspond a la ligne reprensentant la longueur du rectangle
+     * @param l2 correspond a la largueur representant la largueur du rectangle
+     * @param t1 pour afficher la longueur du rectangle
+     * @param t2 pour afficher la largueur du rectangle
+     */
     public void echelle(Rectangle rect, Line l1, Line l2, Text t1, Text t2) {
-        rect.setStroke(Paint.valueOf("BLACK"));
-        rect.setFill(Paint.valueOf("WHITE"));
         t1.setText(String.valueOf(this.longueur));
         t2.setText(String.valueOf(this.largeur));
-        l1.setStroke(Paint.valueOf("BLACK"));
-        l2.setStroke(Paint.valueOf("BLACK"));
         if (this.longueur >= this.largeur) {
             double width = (600. / this.longueur) * this.longueur;
             double height = (600. / this.longueur) * this.largeur;

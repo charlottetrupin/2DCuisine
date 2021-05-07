@@ -1,11 +1,11 @@
 package Model;
 
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.shape.Rectangle;
 
-import java.util.ArrayList;
-
+/**
+ * Classe qui gere la creation du meuble que l'utilisateur veut afficher dans sa cuisine
+ */
 public class Meuble {
     private double longueur;
     private double largeur;
@@ -22,6 +22,9 @@ public class Meuble {
 
     }
 
+    /**
+     * On set l'imageview i donnee en parametre pour qu'elle corresponde a i1, puis avec les dimensions de la cuisine, on fait une echelle
+     */
     public void ajoutMeuble(ImageView i, ImageView i1, Rectangle rect, int longCuisine, int largCuisine){
         i.setLayoutY(rect.getLayoutY() + 1);
         i.setLayoutX(rect.getLayoutX() + 1);
@@ -49,10 +52,6 @@ public class Meuble {
         return i;
     }
 
-    public double getX() {
-        return x;
-    }
-
     public void setX(double x) {
         this.x = x;
     }
@@ -61,15 +60,5 @@ public class Meuble {
         this.y = y;
     }
 
-    public double getY() {
-        return y;
-    }
 
-    public double getLargeur() {
-        return largeur;
-    }
-
-    public double getLongueur() {
-        return longueur;
-    }
 }
