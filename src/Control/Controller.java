@@ -19,7 +19,9 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
+/**
+ * Controller du fichier fxml dimension
+ */
 public class Controller {
     @FXML private TextField larg;
     @FXML private TextField lon;
@@ -37,6 +39,11 @@ public class Controller {
 
 
 
+    /**
+     * Quand l'utilisateur rentre les dimensions de sa cuisine il doit valider pour voir le resultat
+     * On verifie si les caracteres rentres dans les champs correspondent bien a des chiffres
+     * On utilise une classe Dimension avec une methode echelle pour gerer l'affichage
+     */
     @FXML
     protected void valide(MouseEvent e) throws IOException {
         erreur.setFill(Paint.valueOf("#295676"));
@@ -52,6 +59,13 @@ public class Controller {
         }
     }
 
+    /**
+     * Quand l'utilisateur souhaite passer aux placement des equipements, il clique sur le bouton correspondant
+     * Un message va apparaitre pour s'assurer qu'il en a fini avec les dimensions, si il ferme la fenetre qui a pop up, il pourra continuer de choisir les dimensions
+     * Sinon, on affiche la nouvelle page correspond au fichier fxml equipement et
+     * on initialise aussi les equipements tel que le rectangle representant la cuisine
+     * Si l'utilisateur n'a rentre aucune dimension, par defaut, la cusine aura pour longueur et largueur 200
+     */
     @FXML
     protected void equipement(MouseEvent e) throws Exception {
         Stage primaryStage = (Stage) equip.getScene().getWindow();
@@ -73,9 +87,8 @@ public class Controller {
         newWindow.setX(primaryStage.getX() + 350);
         newWindow.setY(primaryStage.getY() + 100);
         newWindow.show();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("equipement.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("../Fxml/equipement.fxml"));
         Pane pane = loader.load();
-
         Controller2 c = loader.getController();
         Dimension dim = new Dimension(this.longueur, this.largeur);
         dim.echelle(c.getRect(),c.getLineLong(),c.getLineLarg(),c.getTextLong(),c.getTextLarg());
@@ -93,7 +106,6 @@ public class Controller {
             @Override
             public void handle(ActionEvent actionEvent) {
                 newWindow.close();
-
                 primaryStage.setScene(myScene2);
                 primaryStage.setX(primaryStage.getX());
                 primaryStage.setY(primaryStage.getY());
@@ -103,12 +115,11 @@ public class Controller {
 
     }
 
-
-    public int getLargeur() {
-        return this.largeur;
+    public void setLongueur(int longueur) {
+        this.longueur = longueur;
     }
 
-    public int getLongueur(){
-        return this.longueur;
+    public void setLarg(int largeur){
+        this.largeur = largeur;
     }
 }
